@@ -1,0 +1,50 @@
+---
+title: "show"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+A <- matrix(c(1:50),ncol = 5,nrow = 10 )
+A <- A/100
+```
+
+```{r}
+A
+```
+
+```{r}
+result <- test_gl_to_gp(A)
+```
+
+```{r}
+plot(result)
+```
+
+```{r}
+B <- log(A)
+B
+```
+
+```{r}
+log_sum_exp(B[1,])
+log(sum(A[1,]))
+```
+
+```{r}
+log_likelihood_forB(B)
+log_like(A)
+```
+
+```{r}
+log_gl_to_gp(B)
+log(gl_to_gp(A))
+```
+
